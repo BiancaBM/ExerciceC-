@@ -3,3 +3,7 @@
 ################################################################################
 
 /packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0
+/ConsoleApp1/bin/Debug
+/ConsoleApp1/obj/Debug
+/exemple/obj/Debug
+/exemple/bin
