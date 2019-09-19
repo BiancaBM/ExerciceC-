@@ -11,7 +11,7 @@ namespace ConsoleApp1.Services
         public IEnumerable<User> MajorPerson(IEnumerable<User> users)
         {
            
-            var majorPers = users.Where(pers => (DateTime.UtcNow.Year - pers.BirthDate.Year) >= 18).ToList<User>();
+            var majorPers = users.Where(pers => (DateTime.UtcNow.Year - pers.BirthDate.Year) >= 18).ToList();
 
             return majorPers;
 
@@ -19,7 +19,7 @@ namespace ConsoleApp1.Services
 
         public IEnumerable<User> FemalePension(IEnumerable<User> users)
         {
-            var femalpers = users.Where(pers => pers.Gender == EGender.F && (DateTime.UtcNow.Year - pers.BirthDate.Year) >= 60).ToList<User>();
+            var femalpers = users.Where(pers => pers.Gender == EGender.F && (DateTime.UtcNow.Year - pers.BirthDate.Year) >= 60).ToList();
                                   
             return femalpers;
         }
