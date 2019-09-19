@@ -24,7 +24,7 @@ namespace ConsoleApp1.Services
         public IEnumerable<User> FemalePension(IEnumerable<User> users)
         {
             var femalpers = new List<User>();
-#warning Biencutzo, aici treci la urmatorul nivel, using linq madam :)) :)
+#warning Biencutzo, aici treci la urmatorul nivel, using linq madam :))
             // perfect cu foreach. insa acum vreau sa folosesti linq, fluentApi... adica acela cu .Where(....)
             // incearca pentru ambele foreach-uri, de aici si din MajorPerson
             // daca nu reusesti, iti dau eu exemplu pentru unu din ele, sau mici ponturi
