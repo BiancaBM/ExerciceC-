@@ -1,7 +1,8 @@
 ﻿using ConsoleApp1.Contracts;
 using System;
 using System.Collections.Generic;
-using static ConsoleApp1.Enums;
+using ConsoleApp1.Enums;
+using System.Linq;
 
 namespace ConsoleApp1.Services 
 {
@@ -9,33 +10,17 @@ namespace ConsoleApp1.Services
     {
         public IEnumerable<User> MajorPerson(IEnumerable<User> users)
         {
-            var persons = new List<User>();
-            foreach (User pers in users)
-            {
-                if ((DateTime.UtcNow.Year - pers.BirthDate.Year) >= 18)
-                {
-                    persons.Add(pers);
-                }
-            }
-            return persons;
+           
+            var majorPers = users.Where(pers => (DateTime.UtcNow.Year - pers.BirthDate.Year) >= 18).ToList<User>();
+
+            return majorPers;
 
         }
 
         public IEnumerable<User> FemalePension(IEnumerable<User> users)
         {
-            var femalpers = new List<User>();
-#warning Biencutzo, aici treci la urmatorul nivel, using linq madam :))
-            // perfect cu foreach. insa acum vreau sa folosesti linq, fluentApi... adica acela cu .Where(....)
-            // incearca pentru ambele foreach-uri, de aici si din MajorPerson
-            // daca nu reusesti, iti dau eu exemplu pentru unu din ele, sau mici ponturi
-            foreach (User pers in users)
-            {
-                if ((pers.Gender == EGender.F) && (DateTime.UtcNow.Year - pers.BirthDate.Year) >= 60)
-                {
-                    femalpers.Add(pers);
-                }
-            }
-
+            var femalpers = users.Where(pers => pers.Gender == EGender.F && (DateTime.UtcNow.Year - pers.BirthDate.Year) >= 60).ToList<User>();
+                                  
             return femalpers;
         }
 
